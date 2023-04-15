@@ -22,9 +22,6 @@ require("lazy").setup({
 		{
 			'folke/tokyonight.nvim',
 			priority = 1000,
-			opts = {
-				style = "moon" ,
-			},
 		},
 		{
 			'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -66,5 +63,12 @@ require("lazy").setup({
     				{'rafamadriz/friendly-snippets'}, -- Optional
 			}
   		},
+        {
+            'jose-elias-alvarez/null-ls.nvim',
+			dependencies = { 'nvim-lua/plenary.nvim' },
+        },
+        {
+            "folke/which-key.nvim",
+        }
 	}
 })

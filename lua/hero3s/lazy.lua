@@ -19,15 +19,18 @@ end
 
 require("lazy").setup({
 	spec = {
+        -- Colorscheme
 		{
 			"folke/tokyonight.nvim",
 			priority = 1000,
 		},
+        -- Fuzzy finder
 		{
 			"nvim-telescope/telescope.nvim",
 			tag = "0.1.1",
 			dependencies = { "nvim-lua/plenary.nvim" },
 		},
+        -- Treesitter
 		{
 			"nvim-treesitter/nvim-treesitter",
 			build = ":TSUpdate",
@@ -36,12 +39,14 @@ require("lazy").setup({
 			"nvim-treesitter/playground",
 			build = ":TSInstall query",
 		},
+        -- Version control
 		{
 			"mbbill/undotree",
 		},
 		{
 			"tpope/vim-fugitive",
 		},
+        -- LSP
 		{
 			"VonHeikemen/lsp-zero.nvim",
 			branch = "v1.x",
@@ -64,10 +69,12 @@ require("lazy").setup({
 				{ "rafamadriz/friendly-snippets" }, -- Optional
 			},
 		},
+        -- Formatter
 		{
 			"jose-elias-alvarez/null-ls.nvim",
 			dependencies = { "nvim-lua/plenary.nvim" },
 		},
+        -- QoL plugins
 		{
 			"folke/which-key.nvim",
 		},
@@ -76,8 +83,14 @@ require("lazy").setup({
 			version = "*", -- Use for stability; omit to use `main` branch for the latest features
 			event = "VeryLazy",
 		},
+		{
+			"windwp/nvim-autopairs",
+		},
+		{
+			"terrortylor/nvim-comment",
+		},
         {
-            "windwp/nvim-autopairs",
+            "folke/todo-comments.nvim"
         }
 	},
 })

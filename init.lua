@@ -19,7 +19,7 @@ require('plugins.fugitive')
 require('plugins.autopair')
 require('plugins.nvim-comment')
 require('plugins.todo-comments')
-require('plugins.null-ls')
+require('plugins.efmls-configs-nvim')
 require('plugins.which-key')
 require('plugins.nvim-surround')
 

@@ -56,6 +56,8 @@ require("lazy").setup({
 			-- version = "v1.x.x", -- version is optional, but recommended
 			dependencies = { "neovim/nvim-lspconfig" },
 		},
+		-- Markdown
+		{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 		-- QoL plugins
 		{
 			"folke/which-key.nvim",

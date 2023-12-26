@@ -4,6 +4,7 @@ require('hero3s.remap')
 
 -- Package manager
 require('hero3s.lazy')
+-- Colorscheme has to wait for package manager to be setup 
 require('plugins.colorscheme')
 
 -- Must-have
@@ -23,3 +24,5 @@ require('plugins.efmls-configs-nvim')
 require('plugins.which-key')
 require('plugins.nvim-surround')
 
+-- Markdown
+require('plugins.glow')

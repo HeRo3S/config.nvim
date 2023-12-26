@@ -31,7 +31,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", function()
-	vim.lsp.buf.format({ timeout = 3000 })
+	vim.lsp.buf.format({ name = "efm", timeout = 3000 })
 end)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")

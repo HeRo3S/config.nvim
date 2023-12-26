@@ -18,7 +18,6 @@ require("mason-lspconfig").setup({
 		"bashls",
 		"clangd",
 		"efm",
-		"eslint",
 	},
 	handlers = {
 		lsp.default_setup,
@@ -35,6 +34,7 @@ cmp.setup({
 		["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
 		["<C-y>"] = cmp.mapping.confirm({ select = true }),
 		["<C-Space>"] = cmp.mapping.complete(),
+        ['<CR>'] = cmp.mapping.confirm({select = true}),
 		["<Tab>"] = nil,
 		["<S-Tab>"] = nil,
 	}),

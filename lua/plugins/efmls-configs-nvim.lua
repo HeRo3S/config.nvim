@@ -15,13 +15,15 @@ local markdownlint = require("efmls-configs.linters.markdownlint")
 local languages = {
 	typescript = { eslint_d, prettier_d },
 	javascript = { eslint_d, prettier_d },
+	typescriptreact = { eslint_d, prettier_d },
+	javascriptreact = { eslint_d, prettier_d },
 	lua = { luacheck, stylua },
 	css = { prettier_d },
 	html = { djlint, prettier_d },
 	python = { flake8, autopep8 },
 	sh = { shellcheck, beautysh },
 	tex = { chktex, latexindent },
-    markdown = {markdownlint, prettier_d}
+	markdown = { markdownlint, prettier_d },
 }
 
 -- Or use the defaults provided by this plugin

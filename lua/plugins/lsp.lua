@@ -18,6 +18,7 @@ require("mason-lspconfig").setup({
 		"bashls",
 		"clangd",
 		"efm",
+        "texlab"
 	},
 	handlers = {
 		lsp.default_setup,

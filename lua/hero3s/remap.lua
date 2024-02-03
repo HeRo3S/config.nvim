@@ -55,8 +55,8 @@ local editLazyFile = function ()
     end
     vim.api.nvim_command(command);
 end
-
 vim.keymap.set("n", "<leader>vpl", editLazyFile)
+
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 vim.keymap.set("n", "<leader><leader>", function()

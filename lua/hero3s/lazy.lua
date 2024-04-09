@@ -20,10 +20,7 @@ end
 require("lazy").setup({
 	spec = {
 		-- Colorscheme
-		{
-			"folke/tokyonight.nvim",
-			priority = 1000,
-		},
+		{ "folke/tokyonight.nvim", priority = 1000 },
 		{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 		-- Fuzzy finder
 		{
@@ -37,12 +34,8 @@ require("lazy").setup({
 			build = ":TSUpdate",
 		},
 		-- Version control
-		{
-			"mbbill/undotree",
-		},
-		{
-			"tpope/vim-fugitive",
-		},
+		{ "mbbill/undotree" },
+		{ "tpope/vim-fugitive" },
 		-- LSP
 		{ "williamboman/mason.nvim" },
 		{ "williamboman/mason-lspconfig.nvim" },
@@ -50,6 +43,7 @@ require("lazy").setup({
 		{ "neovim/nvim-lspconfig" },
 		{ "hrsh7th/cmp-nvim-lsp" },
 		{ "hrsh7th/nvim-cmp" },
+		--Snippet
 		{ "L3MON4D3/LuaSnip" },
 		-- Formatter
 		{
@@ -60,22 +54,11 @@ require("lazy").setup({
 		-- Markdown
 		{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 		-- QoL plugins
-		{
-			"folke/which-key.nvim",
-		},
-		{
-			"kylechui/nvim-surround",
-			version = "*", -- Use for stability; omit to use `main` branch for the latest features
-			event = "VeryLazy",
-		},
-		{
-			"windwp/nvim-autopairs",
-		},
-		{
-			"terrortylor/nvim-comment",
-		},
-		{
-			"folke/todo-comments.nvim",
-		},
+		{ "folke/which-key.nvim" },
+		{ "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
+		{ "windwp/nvim-autopairs" },
+		{ "windwp/nvim-ts-autotag" },
+		{ "terrortylor/nvim-comment" },
+		{ "folke/todo-comments.nvim" },
 	},
 })

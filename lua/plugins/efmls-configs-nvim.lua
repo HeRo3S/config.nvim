@@ -19,6 +19,7 @@ local languages = {
 	javascriptreact = { eslint_d, prettier_d },
 	lua = { luacheck, stylua },
 	css = { prettier_d },
+	scss = { prettier_d },
 	html = { djlint, prettier_d },
 	python = { flake8, autopep8 },
 	sh = { shellcheck, beautysh },

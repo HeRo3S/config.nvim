@@ -22,6 +22,8 @@ require("lazy").setup({
 		-- Colorscheme
 		{ "folke/tokyonight.nvim", priority = 1000 },
 		{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+		-- Enhanced file browser
+		{ "stevearc/oil.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 		-- Fuzzy finder
 		{
 			"nvim-telescope/telescope.nvim",
@@ -29,10 +31,7 @@ require("lazy").setup({
 			dependencies = { "nvim-lua/plenary.nvim" },
 		},
 		-- Treesitter
-		{
-			"nvim-treesitter/nvim-treesitter",
-			build = ":TSUpdate",
-		},
+		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 		-- Version control
 		{ "mbbill/undotree" },
 		{ "tpope/vim-fugitive" },

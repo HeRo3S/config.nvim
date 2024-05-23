@@ -27,4 +27,3 @@ require("plugins.nvim-surround")
 
 -- Markdown
 require("plugins.glow")
-

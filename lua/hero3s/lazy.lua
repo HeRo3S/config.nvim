@@ -22,6 +22,8 @@ require("lazy").setup({
 		-- Colorscheme
 		{ "folke/tokyonight.nvim", priority = 1000 },
 		{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+		-- Status bar
+		{ "nvim-lualine/lualine.nvim" },
 		-- Enhanced file browser
 		{ "stevearc/oil.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 		-- Fuzzy finder

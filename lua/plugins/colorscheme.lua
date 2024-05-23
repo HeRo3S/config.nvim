@@ -7,7 +7,7 @@ require("tokyonight").setup({
 
 -- Catppuccin setup
 require("catppuccin").setup({
-	flavour = "macchiato", -- latte, frappe, macchiato, mocha
+	flavour = "mocha", -- latte, frappe, macchiato, mocha
 	background = { -- :h background
 		light = "latte",
 		dark = "macchiato",
@@ -58,8 +58,8 @@ local colorscheme = "catppuccin"
 
 vim.cmd.colorscheme(colorscheme)
 -- Should change this Primeagen's config
--- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
--- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 -- Status line setup
 require("lualine").setup({
@@ -102,4 +102,3 @@ require("lualine").setup({
 	inactive_winbar = {},
 	extensions = {},
 })
-

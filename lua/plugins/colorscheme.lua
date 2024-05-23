@@ -1,16 +1,16 @@
 -- Tokyonight setup
--- require("tokyonight").setup({
--- 	style = "storm",
--- 	light_style = "day",
--- 	terminal_colors = true,
--- })
---
+require("tokyonight").setup({
+	style = "storm",
+	light_style = "day",
+	terminal_colors = true,
+})
+
 -- Catppuccin setup
 require("catppuccin").setup({
-	flavour = "mocha", -- latte, frappe, macchiato, mocha
+	flavour = "macchiato", -- latte, frappe, macchiato, mocha
 	background = { -- :h background
 		light = "latte",
-		dark = "mocha",
+		dark = "macchiato",
 	},
 	transparent_background = false, -- disables setting the background color.
 	show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
@@ -57,8 +57,9 @@ require("catppuccin").setup({
 local colorscheme = "catppuccin"
 
 vim.cmd.colorscheme(colorscheme)
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- Should change this Primeagen's config
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 -- Status line setup
 require("lualine").setup({
@@ -101,3 +102,4 @@ require("lualine").setup({
 	inactive_winbar = {},
 	extensions = {},
 })
+

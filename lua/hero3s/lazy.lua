@@ -26,10 +26,16 @@ require("lazy").setup({
 		{ "nvim-lualine/lualine.nvim" },
 		-- Enhanced file browser
 		{ "stevearc/oil.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+		-- File navigation
+		{
+			"ThePrimeagen/harpoon",
+			branch = "harpoon2",
+			dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+		},
 		-- Fuzzy finder
 		{
 			"nvim-telescope/telescope.nvim",
-            branch = "0.1.x",
+			branch = "0.1.x",
 			dependencies = { "nvim-lua/plenary.nvim" },
 		},
 		-- Treesitter

@@ -17,7 +17,7 @@ require("oil").setup({
 		["_"] = "actions.open_cwd",
 		-- ["g`"] = "actions.cd",
 		-- ["g~"] = "actions.tcd",
-		["gs"] = "actions.change_sort",
+		-- ["gs"] = "actions.change_sort",
 		-- ["gx"] = "actions.open_external",
 		["g."] = "actions.toggle_hidden",
 		["g\\"] = "actions.toggle_trash",

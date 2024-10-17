@@ -60,6 +60,10 @@ require("lazy").setup({
 		},
 		-- Markdown
 		{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+		-- Database
+		{ "tpope/vim-dadbod" },
+		{ "kristijanhusak/vim-dadbod-ui" },
+		{ "kristijanhusak/vim-dadbod-completion" },
 		-- QoL plugins
 		{ "folke/which-key.nvim" },
 		{ "kylechui/nvim-surround", version = "*", event = "VeryLazy" },

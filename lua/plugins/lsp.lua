@@ -30,6 +30,11 @@ local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
+	sources = {
+		{ name = "vim-dadbod-completion" },
+		{ name = "luasnip" },
+		{ name = "buffer" },
+	},
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)

@@ -31,9 +31,10 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
 	sources = {
-		{ name = "vim-dadbod-completion" },
+		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
+		{ name = "vim-dadbod-completion" },
 	},
 	snippet = {
 		expand = function(args)

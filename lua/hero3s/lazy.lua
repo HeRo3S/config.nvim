@@ -61,16 +61,8 @@ require("lazy").setup({
 		-- Markdown
 		{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 		-- Database
-		{ "tpope/vim-dadbod" },
-		{ "kristijanhusak/vim-dadbod-ui" },
-		{ "kristijanhusak/vim-dadbod-completion" },
+		{ import = "plugins.dadbod" },
 		-- QoL plugins
-		-- { "folke/which-key.nvim" },
-		-- { "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
-		-- { "windwp/nvim-autopairs" },
-		-- { "windwp/nvim-ts-autotag" },
-		-- { "terrortylor/nvim-comment" },
-		-- { "folke/todo-comments.nvim" },
 		{ import = "plugins.qol" },
 		{ import = "plugins.noice" },
 	},

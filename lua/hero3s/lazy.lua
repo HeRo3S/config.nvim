@@ -25,7 +25,7 @@ require("lazy").setup({
 		-- Status bar
 		{ "nvim-lualine/lualine.nvim" },
 		-- Enhanced file browser
-		{ "stevearc/oil.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+		{ import = "plugins.oil" },
 		-- File navigation
 		{
 			"ThePrimeagen/harpoon",
@@ -39,9 +39,9 @@ require("lazy").setup({
 			dependencies = { "nvim-lua/plenary.nvim" },
 		},
 		-- Treesitter
-		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+		{ import = "plugins.treesitter" },
 		-- Version control
-		{ "mbbill/undotree" },
+		{ import = "plugins.undotree" },
 		{ "tpope/vim-fugitive" },
 		-- LSP
 		{ "williamboman/mason.nvim" },

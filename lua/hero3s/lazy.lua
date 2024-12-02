@@ -39,7 +39,7 @@ require("lazy").setup({
 			dependencies = { "nvim-lua/plenary.nvim" },
 		},
 		-- Treesitter
-		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+		{ import = "plugins.treesitter" },
 		-- Version control
 		{ "mbbill/undotree" },
 		{ "tpope/vim-fugitive" },

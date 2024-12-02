@@ -41,7 +41,7 @@ require("lazy").setup({
 		-- Treesitter
 		{ import = "plugins.treesitter" },
 		-- Version control
-		{ "mbbill/undotree" },
+		{ import = "plugins.undotree" },
 		{ "tpope/vim-fugitive" },
 		-- LSP
 		{ "williamboman/mason.nvim" },

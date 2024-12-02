@@ -13,7 +13,6 @@ require("plugins.lsp")
 require("plugins.harpoon")
 
 -- Versions control
-require("plugins.undotree")
 require("plugins.fugitive")
 
 -- QoL plugins

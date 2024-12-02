@@ -10,7 +10,6 @@ require("plugins.colorscheme")
 -- Must-have
 require("plugins.telescope")
 require("plugins.lsp")
-require("plugins.oil")
 require("plugins.harpoon")
 
 -- Versions control

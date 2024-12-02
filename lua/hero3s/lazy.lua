@@ -25,7 +25,7 @@ require("lazy").setup({
 		-- Status bar
 		{ "nvim-lualine/lualine.nvim" },
 		-- Enhanced file browser
-		{ "stevearc/oil.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+		{ import = "plugins.oil" },
 		-- File navigation
 		{
 			"ThePrimeagen/harpoon",

@@ -19,13 +19,7 @@ require("plugins.undotree")
 require("plugins.fugitive")
 
 -- QoL plugins
-require("plugins.autopair")
-require("plugins.nvim-comment")
-require("plugins.todo-comments")
 require("plugins.efmls-configs-nvim")
-require("plugins.which-key")
-require("plugins.nvim-surround")
-require("plugins.noice")
 
 -- Markdown
 require("plugins.glow")

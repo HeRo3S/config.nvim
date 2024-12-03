@@ -20,18 +20,13 @@ end
 require("lazy").setup({
 	spec = {
 		-- Colorscheme
-		{ "folke/tokyonight.nvim", priority = 1000 },
-		{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+		{ import = "plugins.colorscheme" },
 		-- Status bar
 		{ import = "plugins.lualine" },
 		-- Enhanced file browser
 		{ import = "plugins.oil" },
 		-- File navigation
-		{
-			"ThePrimeagen/harpoon",
-			branch = "harpoon2",
-			dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
-		},
+		{ import = "plugins.harpoon" },
 		-- Fuzzy finder
 		{ import = "plugins.telescope" },
 		-- Treesitter

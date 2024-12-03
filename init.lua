@@ -9,7 +9,6 @@ require("plugins.colorscheme")
 
 -- Must-have
 require("plugins.telescope")
-require("plugins.lsp")
 require("plugins.harpoon")
 
 -- QoL plugins

@@ -12,7 +12,6 @@ require("plugins.telescope")
 require("plugins.harpoon")
 
 -- QoL plugins
-require("plugins.efmls-configs-nvim")
 
 -- Markdown
 require("plugins.glow")

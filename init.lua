@@ -12,9 +12,6 @@ require("plugins.telescope")
 require("plugins.lsp")
 require("plugins.harpoon")
 
--- Versions control
-require("plugins.fugitive")
-
 -- QoL plugins
 require("plugins.efmls-configs-nvim")
 

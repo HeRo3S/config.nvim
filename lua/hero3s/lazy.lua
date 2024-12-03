@@ -23,7 +23,7 @@ require("lazy").setup({
 		{ "folke/tokyonight.nvim", priority = 1000 },
 		{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 		-- Status bar
-		{ "nvim-lualine/lualine.nvim" },
+		{ import = "plugins.lualine" },
 		-- Enhanced file browser
 		{ import = "plugins.oil" },
 		-- File navigation

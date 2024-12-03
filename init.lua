@@ -8,7 +8,6 @@ require("hero3s.lazy")
 require("plugins.colorscheme")
 
 -- Must-have
-require("plugins.telescope")
 require("plugins.harpoon")
 
 -- QoL plugins

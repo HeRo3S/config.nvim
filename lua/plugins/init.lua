@@ -16,8 +16,10 @@ return {
 	{ import = "plugins.fugitive" },
 	-- LSP
 	{ import = "plugins.lsp" },
+	{ import = "plugins.lint" },
 	-- Formatter
-	{ import = "plugins.efmls-configs-nvim" },
+	-- { import = "plugins.efmls-configs-nvim" },
+	{ import = "plugins.conform" },
 	-- Markdown
 	{ import = "plugins.glow" },
 	-- Database

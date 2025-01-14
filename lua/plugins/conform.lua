@@ -6,7 +6,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "autopep8" },
-				sh = { "beautysh" },
+				sh = { "shfmt" },
 				tex = { "latexindent" },
 				-- Conform will run the first available formatter
 				javascript = { "prettierd", "prettier", stop_after_first = true },

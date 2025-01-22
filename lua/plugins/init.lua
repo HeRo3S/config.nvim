@@ -26,4 +26,6 @@ return {
 	-- QoL plugins
 	{ import = "plugins.qol" },
 	{ import = "plugins.noice" },
+	-- AI
+	{ import = "plugins.ai" },
 }

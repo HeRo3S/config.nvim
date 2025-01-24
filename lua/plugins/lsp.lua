@@ -26,11 +26,7 @@ return {
 					"pyright",
 					"rust_analyzer",
 					"tailwindcss",
-					"jsonls",
-					"cssls",
-					"bashls",
 					"clangd",
-					"efm",
 					"texlab",
 				},
 				handlers = {

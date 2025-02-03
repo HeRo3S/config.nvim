@@ -20,7 +20,7 @@ return {
 	-- Formatter
 	{ import = "plugins.conform" },
 	-- Markdown
-	{ import = "plugins.glow" },
+	{ import = "plugins.markdown" },
 	-- Database
 	{ import = "plugins.dadbod" },
 	-- QoL plugins

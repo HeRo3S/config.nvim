@@ -32,6 +32,13 @@ return {
 					adapter = "gemini",
 				},
 			},
+			display = {
+				chat = {
+					window = {
+						position = "right",
+					},
+				},
+			},
 		},
 	},
 }

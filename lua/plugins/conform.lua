@@ -26,6 +26,7 @@ return {
 				html = { "prettierd", "prettier", stop_after_first = true },
 				markdown = { "prettierd", "prettier", stop_after_first = true },
 				twig = { "djlint" },
+				latex = { "latexindent" },
 			},
 		}
 		local conform = require("conform")

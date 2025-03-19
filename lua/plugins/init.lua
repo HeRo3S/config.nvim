@@ -28,5 +28,5 @@ return {
 	{ import = "plugins.noice" },
 	{ import = "plugins.refactoring" },
 	-- AI
-	{ import = "plugins.ai" },
+	{ import = "plugins.ai.init" },
 }

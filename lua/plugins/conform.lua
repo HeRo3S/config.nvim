@@ -3,6 +3,14 @@ return {
 	events = { "BufReadPre", "BufNewFile" },
 	opts = function()
 		local opts = {
+			formatters = {
+				ludtwig = {
+					inherit = false,
+					command = "ludtwig",
+					args = { "-f", "$FILENAME" },
+					stdin = false,
+				},
+			},
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "autopep8" },
@@ -17,11 +25,12 @@ return {
 				scss = { "prettierd", "prettier", stop_after_first = true },
 				html = { "prettierd", "prettier", stop_after_first = true },
 				markdown = { "prettierd", "prettier", stop_after_first = true },
+				twig = { "djlint" },
 			},
 		}
 		local conform = require("conform")
 		vim.keymap.set("n", "<leader>f", function()
-			conform.format({ lsp_fallback = true, async = false, timeout_ms = 1000 })
+			conform.format({ lsp_fallback = true, async = false, timeout_ms = 3000 })
 		end, { desc = "Format file or range (visual mode)" })
 
 		return opts

@@ -2,9 +2,31 @@ function Draw(colors)
 	local colorscheme = colors or "catppuccin"
 	vim.cmd.colorscheme(colorscheme)
 
-	-- Should change this Primeagen's config
+	-- Main editor window transparent
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	
+	-- Floating windows slightly opaque for better readability
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e1e2e" })
+	vim.api.nvim_set_hl(0, "FloatNormal", { bg = "#1e1e2e" })
+	vim.api.nvim_set_hl(0, "FloatNormalNC", { bg = "#1e1e2e" })
+	
+	-- Keep borders and titles visible
+	vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#313244", fg = "#a6adc8" })
+	vim.api.nvim_set_hl(0, "FloatBorderNC", { bg = "#313244", fg = "#a6adc8" })
+	vim.api.nvim_set_hl(0, "FloatTitle", { bg = "#313244", fg = "#cdd6f4" })
+	vim.api.nvim_set_hl(0, "FloatTitleNC", { bg = "#313244", fg = "#a6adc8" })
+	
+	-- Scrollbar styling
+	vim.api.nvim_set_hl(0, "FloatScrollbar", { bg = "#313244" })
+	vim.api.nvim_set_hl(0, "FloatScrollbarNC", { bg = "#313244" })
+	vim.api.nvim_set_hl(0, "FloatThumb", { bg = "#45475a" })
+	vim.api.nvim_set_hl(0, "FloatThumbNC", { bg = "#45475a" })
+	
+	-- Subtle shadows
+	vim.api.nvim_set_hl(0, "FloatShadow", { bg = "#000000", blend = 50 })
+	vim.api.nvim_set_hl(0, "FloatShadowNC", { bg = "#000000", blend = 50 })
+	vim.api.nvim_set_hl(0, "FloatShadowThrough", { bg = "#000000", blend = 50 })
+	vim.api.nvim_set_hl(0, "FloatShadowThroughNC", { bg = "#000000", blend = 50 })
 end
 
 return {

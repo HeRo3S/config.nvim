@@ -2,15 +2,20 @@ return {
 	"stevearc/conform.nvim",
 	events = { "BufReadPre", "BufNewFile" },
 	opts = function()
+		local conform = require("conform")
+		vim.keymap.set("n", "<leader>f", function()
+			conform.format({ lsp_fallback = true, async = false, timeout_ms = 3000 })
+		end, { desc = "Format file or range (visual mode)" })
+
+		conform.formatters.php_cs_fixer = {
+			append_args = function()
+				local cwd = "."
+				return { "--config=" .. cwd .. "/.php-cs-fixer.dist.php" }
+			end,
+		}
+
 		local opts = {
-			formatters = {
-				ludtwig = {
-					inherit = false,
-					command = "ludtwig",
-					args = { "-f", "$FILENAME" },
-					stdin = false,
-				},
-			},
+			-- formatters = {},
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "autopep8" },
@@ -26,14 +31,9 @@ return {
 				html = { "prettierd", "prettier", stop_after_first = true },
 				markdown = { "prettierd", "prettier", stop_after_first = true },
 				twig = { "djlint" },
-				latex = { "latexindent" },
+				php = { "php_cs_fixer" },
 			},
 		}
-		local conform = require("conform")
-		vim.keymap.set("n", "<leader>f", function()
-			conform.format({ lsp_fallback = true, async = false, timeout_ms = 3000 })
-		end, { desc = "Format file or range (visual mode)" })
-
 		return opts
 	end,
 }

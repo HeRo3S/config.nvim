@@ -30,15 +30,106 @@ return {
     },
 
 	config = function()
+		local dap = require("dap")
+
+		if not dap.adapters["pwa-node"] then
+			require("dap").adapters["pwa-node"] = {
+				type = "server",
+				host = "localhost",
+				port = "${port}",
+				executable = {
+					command = "node",
+					-- 💀 Make sure to update this path to point to your installation
+					args = {
+						vim.fn.resolve(
+							vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
+						),
+						"${port}",
+					},
+				},
+			}
+		end
+		if not dap.adapters["node"] then
+			dap.adapters["node"] = function(cb, config)
+				if config.type == "node" then
+					config.type = "pwa-node"
+				end
+				local nativeAdapter = dap.adapters["pwa-node"]
+				if type(nativeAdapter) == "function" then
+					nativeAdapter(cb, config)
+				else
+					cb(nativeAdapter)
+				end
+			end
+		end
+
 		-- load mason-nvim-dap here, after all adapters have been setup
 		require("mason-nvim-dap").setup({
-			ensure_installed = { "node2" },
+			ensure_installed = { "js-debug-adapter" },
 		})
 
 		vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
 
-		-- setup dap config by VsCode launch.json file
+		local js_filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
+
 		local vscode = require("dap.ext.vscode")
+		vscode.type_to_filetypes["node"] = js_filetypes
+		vscode.type_to_filetypes["pwa-node"] = js_filetypes
+
+		for _, language in ipairs(js_filetypes) do
+			dap.configurations[language] = {
+				-- Debug single nodejs files
+				{
+					type = "pwa-node",
+					request = "launch",
+					name = "Launch file",
+					program = "${file}",
+					cwd = vim.fn.getcwd(),
+					sourceMaps = true,
+				},
+				-- Debug nodejs processes (make sure to add --inspect when you run the process)
+				{
+					type = "pwa-node",
+					request = "attach",
+					name = "Attach",
+					processId = require("dap.utils").pick_process,
+					cwd = vim.fn.getcwd(),
+					sourceMaps = true,
+				},
+				-- Debug web applications (client side)
+				{
+					type = "pwa-chrome",
+					request = "launch",
+					name = "Launch & Debug Chrome",
+					url = function()
+						local co = coroutine.running()
+						return coroutine.create(function()
+							vim.ui.input({
+								prompt = "Enter URL: ",
+								default = "http://localhost:3000",
+							}, function(url)
+								if url == nil or url == "" then
+									return
+								else
+									coroutine.resume(co, url)
+								end
+							end)
+						end)
+					end,
+					webRoot = vim.fn.getcwd(),
+					protocol = "inspector",
+					sourceMaps = true,
+					userDataDir = false,
+				},
+				-- Divider for the launch.json derived configs
+				{
+					name = "----- ↓ launch.json configs ↓ -----",
+					type = "",
+					request = "launch",
+				},
+			}
+		end
+		-- setup dap config by VsCode launch.json file
 		local json = require("plenary.json")
 		vscode.json_decode = function(str)
 			return vim.json.decode(json.json_strip_comments(str))

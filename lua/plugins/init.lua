@@ -14,8 +14,10 @@ return {
 	-- Version control
 	{ import = "plugins.undotree" },
 	{ import = "plugins.fugitive" },
-	-- LSP
+	-- LSP & DAP
 	{ import = "plugins.lsp" },
+	{ import = "plugins.dap.init" },
+	-- Linter
 	{ import = "plugins.lint" },
 	-- Formatter
 	{ import = "plugins.conform" },

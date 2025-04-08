@@ -1,8 +1,7 @@
 return {
 	-- Colorscheme
 	{ import = "plugins.ui.colorscheme" },
-	-- Status bar
-	{ import = "plugins.lualine" },
+	{ import = "plugins.ui.init" },
 	-- Enhanced file browser
 	{ import = "plugins.oil" },
 	-- File navigation
@@ -27,7 +26,6 @@ return {
 	{ import = "plugins.dadbod" },
 	-- QoL plugins
 	{ import = "plugins.qol" },
-	{ import = "plugins.ui.noice" },
 	{ import = "plugins.refactoring" },
 	-- AI
 	{ import = "plugins.ai.init" },

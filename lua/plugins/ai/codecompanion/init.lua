@@ -62,7 +62,6 @@ return {
 		}
 	end,
 	init = function()
-		require("plugins.ai.codecompanion.lualine"):init()
 		vim.keymap.set({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
 		vim.keymap.set(
 			{ "n", "v" },

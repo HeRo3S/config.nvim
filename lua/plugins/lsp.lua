@@ -2,8 +2,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/nvim-cmp",
+			{ "saghen/blink.cmp", version = "*" },
 			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
 			{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
@@ -38,31 +37,27 @@ return {
 				},
 			})
 
-			-- Some custom keymap for LSP
-			local cmp = require("cmp")
-			local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
-			cmp.setup({
+			local blink = require("blink.cmp")
+			blink.setup({
+				snippets = { preset = "luasnip" },
 				sources = {
-					{ name = "nvim_lsp" },
-					{ name = "luasnip" },
-					{ name = "buffer" },
-					{ name = "vim-dadbod-completion" },
+					default = { "lsp", "path", "snippets", "buffer", "dadbod" },
+					per_filetype = { sql = { "dadbod" } },
+					providers = {
+						dadbod = { module = "vim_dadbod_completion.blink" },
+					},
 				},
-				snippet = {
-					expand = function(args)
-						require("luasnip").lsp_expand(args.body)
-					end,
+				fuzzy = { implementation = "prefer_rust_with_warning" },
+				keymap = {
+					preset = "none",
+					["<C-p>"] = { "select_prev", "fallback" },
+					["<C-n>"] = { "select_next", "fallback" },
+					["<C-y>"] = { "select_and_accept" },
+					["<C-Space>"] = { "show_documentation" },
+					["<CR>"] = { "select_and_accept" },
+					["<Tab>"] = {},
+					["<S-Tab>"] = {},
 				},
-				mapping = cmp.mapping.preset.insert({
-					["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-					["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-					["<C-y>"] = cmp.mapping.confirm({ select = true }),
-					["<C-Space>"] = cmp.mapping.complete(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
-					["<Tab>"] = nil,
-					["<S-Tab>"] = nil,
-				}),
 			})
 
 			lsp.on_attach(function(client, bufnr)

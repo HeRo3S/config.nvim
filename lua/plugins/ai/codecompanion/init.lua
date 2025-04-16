@@ -7,11 +7,23 @@ return {
 	opts = function()
 		return {
 			adapters = {
-				gemini = function()
-					return require("codecompanion.adapters").extend("gemini", {
+				openrouter = function()
+					return require("codecompanion.adapters").extend("openai_compatible", {
+						name = "openrouter",
+						formatted_name = "OpenRouter",
+						env = {
+							url = "https://openrouter.ai/api",
+							api_key = "OPENROUTER_API_KEY",
+							chat_url = "/v1/chat/completions",
+						},
 						schema = {
 							model = {
-								default = "gemini-2.5-pro-exp-03-25",
+								default = "google/gemini-2.0-flash-001",
+								choices = {
+									"google/gemini-2.0-flash-001",
+									"google/gemini-2.5-pro-exp-03-25:free",
+									"openai/gpt-4.1",
+								},
 							},
 						},
 					})
@@ -19,9 +31,9 @@ return {
 			},
 			strategies = {
 				chat = {
-					adapter = "gemini",
+					adapter = "openrouter",
 					slash_commands = {
-						codebase = require("vectorcode.integrations").codecompanion.chat.make_slash_command(),
+						-- codebase = require("vectorcode.integrations").codecompanion.chat.make_slash_command(),
 						file = {
 							opts = {
 								provider = "telescope", -- Other options include 'default', 'mini_pick', 'fzf_lua', snacks
@@ -41,15 +53,15 @@ return {
 							},
 						},
 					},
-					tools = {
-						vectorcode = {
-							description = "Run VectorCode to retrieve the project context.",
-							callback = require("vectorcode.integrations").codecompanion.chat.make_tool(),
-						},
-					},
+					-- tools = {
+					-- 	vectorcode = {
+					-- 		description = "Run VectorCode to retrieve the project context.",
+					-- 		callback = require("vectorcode.integrations").codecompanion.chat.make_tool(),
+					-- 	},
+					-- },
 				},
 				inline = {
-					adapter = "gemini",
+					adapter = "openrouter",
 				},
 			},
 			display = {

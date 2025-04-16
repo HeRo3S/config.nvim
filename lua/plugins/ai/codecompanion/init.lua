@@ -33,7 +33,7 @@ return {
 				chat = {
 					adapter = "openrouter",
 					slash_commands = {
-						-- codebase = require("vectorcode.integrations").codecompanion.chat.make_slash_command(),
+						codebase = require("vectorcode.integrations").codecompanion.chat.make_slash_command(),
 						file = {
 							opts = {
 								provider = "telescope", -- Other options include 'default', 'mini_pick', 'fzf_lua', snacks
@@ -53,12 +53,12 @@ return {
 							},
 						},
 					},
-					-- tools = {
-					-- 	vectorcode = {
-					-- 		description = "Run VectorCode to retrieve the project context.",
-					-- 		callback = require("vectorcode.integrations").codecompanion.chat.make_tool(),
-					-- 	},
-					-- },
+					tools = {
+						vectorcode = {
+							description = "Run VectorCode to retrieve the project context.",
+							callback = require("vectorcode.integrations").codecompanion.chat.make_tool(),
+						},
+					},
 				},
 				inline = {
 					adapter = "openrouter",

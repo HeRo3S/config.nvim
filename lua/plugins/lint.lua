@@ -4,7 +4,6 @@ return {
 	config = function()
 		local lint = require("lint")
 		lint.linters_by_ft = {
-			lua = { "luacheck" },
 			python = { "flake8" },
 			sh = { "shellcheck" },
 			tex = { "chktex" },

@@ -18,9 +18,10 @@ return {
 						},
 						schema = {
 							model = {
-								default = "google/gemini-2.0-flash-001",
+								default = "google/gemini-2.0-flash-thinking-exp:free",
 								choices = {
 									"google/gemini-2.0-flash-001",
+									"google/gemini-2.0-flash-thinking-exp:free",
 									"google/gemini-2.5-pro-exp-03-25:free",
 									"openai/gpt-4.1",
 								},

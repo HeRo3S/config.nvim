@@ -22,6 +22,8 @@ return {
 	{ import = "plugins.conform" },
 	-- Markdown
 	{ import = "plugins.markdown" },
+	-- Note
+	{ import = "plugins.obsidian" },
 	-- Database
 	{ import = "plugins.dadbod" },
 	-- QoL plugins

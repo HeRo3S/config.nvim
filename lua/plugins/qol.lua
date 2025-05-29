@@ -10,7 +10,7 @@ return {
 	{ "folke/todo-comments.nvim", opts = {} },
 	{
 		"folke/flash.nvim",
-        event = "VeryLazy",
+		event = "VeryLazy",
 		opts = {},
 		keys = {
             -- stylua: ignore start
@@ -19,7 +19,7 @@ return {
             { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
             { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
             { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-            -- stylua: ignore end
+			-- stylua: ignore end
 		},
 	},
 	{ "terrortylor/nvim-comment" },
@@ -57,5 +57,21 @@ return {
 				-- Configuration here, or leave empty to use defaults
 			})
 		end,
+	},
+	{
+		"HakonHarnes/img-clip.nvim",
+		event = "VeryLazy",
+		opts = {
+			filetypes = {
+				codecompanion = {
+					prompt_for_file_name = false,
+					template = "[Image]($FILE_PATH)",
+					use_absolute_path = true,
+				},
+			},
+		},
+		keys = {
+			{ "<leader>pi", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+		},
 	},
 }

@@ -32,7 +32,7 @@ return {
 	},
 	keys = {
 		{ "<leader>on", "<cmd>ObsidianToday<cr>", desc = "Open today's note in Obsidian" },
-		{ "<leader>oo", "<cmd>ObsidianNew ", desc = "Open today's note in Obsidian" },
+		{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "Open new note in Obsidian" },
 		{ "<leader>op", "<cmd>ObsidianSearch<cr>", desc = "Search in Obsidian" },
 	},
 }

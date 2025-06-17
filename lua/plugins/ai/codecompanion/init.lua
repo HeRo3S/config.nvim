@@ -18,9 +18,9 @@ return {
 						},
 						schema = {
 							model = {
-								default = "google/gemini-2.5-flash-preview",
+								default = "x-ai/grok-3-mini-beta",
 								choices = {
-									"google/gemini-2.5-flash-preview",
+									"x-ai/grok-3-mini-beta",
 									"google/gemini-2.5-flash-preview:thinking",
 									"openai/o4-mini-high",
 								},

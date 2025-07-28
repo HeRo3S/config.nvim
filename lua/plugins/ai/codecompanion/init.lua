@@ -18,10 +18,10 @@ return {
 						},
 						schema = {
 							model = {
-								default = "x-ai/grok-3-mini-beta",
+								default = "qwen/qwen3-coder",
 								choices = {
 									"x-ai/grok-3-mini-beta",
-									"google/gemini-2.5-flash-preview:thinking",
+									"qwen/qwen3-coder",
 									"openai/o4-mini-high",
 								},
 							},

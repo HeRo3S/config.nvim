@@ -1,4 +1,5 @@
 return {
+	{ import = "plugins.env" },
 	-- Colorscheme
 	{ import = "plugins.ui.colorscheme" },
 	{ import = "plugins.ui.init" },

@@ -62,6 +62,22 @@ return {
 				end
 			end
 		end
+		if not dap.adapters["pwa-chrome"] then
+			dap.adapters["pwa-chrome"] = {
+				type = "server",
+				host = "localhost",
+				port = "${port}",
+				executable = {
+					command = "node",
+					args = {
+						vim.fn.resolve(
+							vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
+						),
+						"${port}",
+					},
+				},
+			}
+		end
 
 		-- load mason-nvim-dap here, after all adapters have been setup
 		require("mason-nvim-dap").setup({

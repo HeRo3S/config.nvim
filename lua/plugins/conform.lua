@@ -32,6 +32,7 @@ return {
 				markdown = { "prettierd", "prettier", stop_after_first = true },
 				twig = { "djlint" },
 				php = { "php_cs_fixer" },
+				nix = { "nixfmt" },
 			},
 		}
 		return opts

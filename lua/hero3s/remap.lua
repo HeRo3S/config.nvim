@@ -17,13 +17,26 @@ vim.keymap.set("n", "<leader>svwm", function()
 end)
 
 -- greatest remap ever
+if vim.fn.executable("wl-copy") == 1 and vim.fn.executable("wl-paste") == 1 then
+	vim.g.clipboard = {
+		name = "WlClipboard",
+		copy = {
+			["+"] = "wl-copy",
+			["*"] = "wl-copy",
+		},
+		paste = {
+			["+"] = "wl-paste",
+			["*"] = "wl-paste",
+		},
+		cache_enabled = 0,
+	}
+end
 vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -39,18 +52,18 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-local editLazyFile = function ()
-    local osName = vim.loop.os_uname().sysname
-    local command = ""
-    if ( osName == "Windows_NT") then
-        command = [[e ~\AppData\Local\nvim\lua\hero3s\lazy.lua]]
-        print(command)
-    elseif (osName == "Linux") then
-        command =  "e ~/.config/nvim/lua/hero3s/lazy.lua"
-    else
-        error("Cannot find correct OS: ${osName}")
-    end
-    vim.api.nvim_command(command);
+local editLazyFile = function()
+	local osName = vim.loop.os_uname().sysname
+	local command = ""
+	if osName == "Windows_NT" then
+		command = [[e ~\AppData\Local\nvim\lua\hero3s\lazy.lua]]
+		print(command)
+	elseif osName == "Linux" then
+		command = "e ~/.config/nvim/lua/hero3s/lazy.lua"
+	else
+		error("Cannot find correct OS: ${osName}")
+	end
+	vim.api.nvim_command(command)
 end
 vim.keymap.set("n", "<leader>vpl", editLazyFile)
 

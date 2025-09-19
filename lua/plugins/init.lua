@@ -9,6 +9,8 @@ return {
 	{ import = "plugins.harpoon" },
 	-- Fuzzy finder
 	{ import = "plugins.telescope" },
+	-- Markdown
+	{ import = "plugins.markdown" },
 	-- Treesitter
 	{ import = "plugins.treesitter" },
 	-- Version control
@@ -21,8 +23,6 @@ return {
 	{ import = "plugins.lint" },
 	-- Formatter
 	{ import = "plugins.conform" },
-	-- Markdown
-	{ import = "plugins.markdown" },
 	-- Note
 	{ import = "plugins.obsidian" },
 	-- Database

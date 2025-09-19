@@ -7,27 +7,23 @@ return {
 	opts = function()
 		return {
 			adapters = {
-				openrouter = function()
-					return require("codecompanion.adapters").extend("openai_compatible", {
-						name = "openrouter",
-						formatted_name = "OpenRouter",
-						env = {
-							url = "https://openrouter.ai/api",
-							api_key = "OPENROUTER_API_KEY",
-							chat_url = "/v1/chat/completions",
-						},
-						schema = {
-							model = {
-								default = "qwen/qwen3-coder",
-								choices = {
-									"x-ai/grok-3-mini-beta",
-									"qwen/qwen3-coder",
-									"openai/o4-mini-high",
+				http = {
+					openrouter = function()
+						local openrouter = require("plugins.ai.codecompanion.utils.openrouter")
+						return require("codecompanion.adapters").extend(openrouter, {
+							schema = {
+								model = {
+									default = "qwen/qwen3-coder",
+									choices = {
+										"x-ai/grok-4-fast:free",
+										"qwen/qwen3-coder",
+										"openai/gpt-5-mini",
+									},
 								},
 							},
-						},
-					})
-				end,
+						})
+					end,
+				},
 			},
 			strategies = {
 				chat = {

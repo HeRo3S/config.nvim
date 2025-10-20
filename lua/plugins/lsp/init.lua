@@ -13,21 +13,25 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"ts_ls",
-					"lua_ls",
 					"pyright",
 					"rust_analyzer",
 					"tailwindcss",
 					"clangd",
 					"texlab",
 				},
-				handlers = {
-					-- this first function is the "default handler"
-					-- it applies to every language server without a "custom handler"
-					function(server_name)
-						vim.lsp.enable(server_name)
-					end,
+				automatic_enable = true,
+				excluded = {
+					"vtsls",
 				},
+				-- handlers = {
+				-- this first function is the "default handler"
+				-- it applies to every language server without a "custom handler"
+				-- 	function(server_name)
+				-- 		vim.lsp.enable(server_name)
+				-- 	end,
+				-- },
 			})
+			require("plugins.lsp.vue")
 
 			local blink = require("blink.cmp")
 			blink.setup({

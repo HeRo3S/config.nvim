@@ -17,7 +17,7 @@ return {
 	{ import = "plugins.undotree" },
 	{ import = "plugins.fugitive" },
 	-- LSP & DAP
-	{ import = "plugins.lsp" },
+	{ import = "plugins.lsp.init" },
 	{ import = "plugins.dap.init" },
 	-- Linter
 	{ import = "plugins.lint" },

@@ -13,9 +13,9 @@ return {
 						return require("codecompanion.adapters").extend(openrouter, {
 							schema = {
 								model = {
-									default = "qwen/qwen3-coder",
+									default = "x-ai/grok-4-fast",
 									choices = {
-										"x-ai/grok-4-fast:free",
+										"x-ai/grok-4-fast",
 										"qwen/qwen3-coder",
 										"openai/gpt-5-mini",
 									},

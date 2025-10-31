@@ -24,6 +24,28 @@ return {
 						})
 					end,
 				},
+				acp = {
+					qwen_code_enhanced = function()
+						return require("codecompanion.adapters").extend("gemini_cli", {
+							name = "qwen_code_enhanced",
+							formatted_name = "Qwen Code Enhanced",
+							commands = {
+								default = {
+									"qwen",
+									"--experimental-acp",
+								},
+							},
+							defaults = {
+								auth_method = "openai",
+							},
+							env = {
+								OPENAI_API_KEY = vim.env.OPENROUTER_API_KEY,
+								OPENAI_BASE_URL = "https://openrouter.ai/api/v1",
+								OPENAI_MODEL = "x-ai/grok-4-fast",
+							},
+						})
+					end,
+				},
 			},
 			strategies = {
 				chat = {

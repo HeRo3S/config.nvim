@@ -13,11 +13,11 @@ return {
 						return require("codecompanion.adapters").extend(openrouter, {
 							schema = {
 								model = {
-									default = "x-ai/grok-4-fast",
+									default = "x-ai/grok-4.1-fast",
 									choices = {
-										"x-ai/grok-4-fast",
-										"qwen/qwen3-coder",
-										"openai/gpt-5-mini",
+										"x-ai/grok-4.1-fast",
+										"moonshotai/kimi-k2-thinking",
+										"openai/gpt-5.1-mini",
 									},
 								},
 							},
@@ -41,7 +41,7 @@ return {
 							env = {
 								OPENAI_API_KEY = vim.env.OPENROUTER_API_KEY,
 								OPENAI_BASE_URL = "https://openrouter.ai/api/v1",
-								OPENAI_MODEL = "x-ai/grok-4-fast",
+								OPENAI_MODEL = "x-ai/grok-4.1-fast",
 							},
 						})
 					end,

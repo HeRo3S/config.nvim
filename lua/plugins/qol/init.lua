@@ -1,4 +1,5 @@
 return {
+    require("plugins.qol.snacks"),
 	{
 		"folke/which-key.nvim",
 		opts = {

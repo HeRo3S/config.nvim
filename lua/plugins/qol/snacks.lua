@@ -1,0 +1,28 @@
+return {
+	"folke/snacks.nvim",
+	priority = 1000,
+	lazy = false,
+	---@type snacks.Config
+	opts = {
+		animate = { enabled = true },
+		bigfile = { enabled = true },
+		bufdelete = { enabled = true },
+		dashboard = { enabled = true },
+		dim = { enabled = true },
+		explorer = { enabled = false },
+		image = { enabled = true },
+		gh = { enabled = true },
+		git = { enabled = true },
+		gitbrowse = { enabled = true },
+		indent = { enabled = true },
+		input = { enabled = true },
+		picker = { enabled = true },
+		notifier = { enabled = true, top_down = false },
+		quickfile = { enabled = true },
+		rename = { enabled = true },
+		scope = { enabled = true },
+		scroll = { enabled = false },
+		statuscolumn = { enabled = true },
+		words = { enabled = true },
+	},
+}

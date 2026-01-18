@@ -28,7 +28,7 @@ return {
 	-- Database
 	{ import = "plugins.dadbod" },
 	-- QoL plugins
-	{ import = "plugins.qol" },
+	{ import = "plugins.qol.init" },
 	{ import = "plugins.refactoring" },
 	-- AI
 	{ import = "plugins.ai.init" },

@@ -47,9 +47,9 @@ return {
 					end,
 				},
 			},
-			strategies = {
+			interactions = {
 				chat = {
-					adapter = "openrouter",
+					adapter = "opencode",
 					slash_commands = {
 						buffer = {
 							opts = {
@@ -70,6 +70,12 @@ return {
 				},
 			},
 			display = {
+				action_palette = {
+					provider = "telescope",
+					opts = {
+						title = "CodeCompanion actions",
+					},
+				},
 				chat = {
 					window = {
 						position = "right",

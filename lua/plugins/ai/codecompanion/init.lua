@@ -49,7 +49,7 @@ return {
 			},
 			interactions = {
 				chat = {
-					adapter = "opencode",
+					adapter = "copilot",
 					slash_commands = {
 						buffer = {
 							opts = {

@@ -31,8 +31,8 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader>on", "<cmd>ObsidianToday<cr>", desc = "Open today's note in Obsidian" },
-		{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "Open new note in Obsidian" },
-		{ "<leader>op", "<cmd>ObsidianSearch<cr>", desc = "Search in Obsidian" },
+		{ "<leader>nn", "<cmd>ObsidianToday<cr>", desc = "Open today's note in Obsidian" },
+		{ "<leader>no", "<cmd>ObsidianOpen<cr>", desc = "Open new note in Obsidian" },
+		{ "<leader>np", "<cmd>ObsidianSearch<cr>", desc = "Search in Obsidian" },
 	},
 }

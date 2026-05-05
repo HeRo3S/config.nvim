@@ -29,7 +29,7 @@ return {
 	{ import = "plugins.dadbod" },
 	-- QoL plugins
 	{ import = "plugins.qol.init" },
-	{ import = "plugins.refactoring" },
+	-- { import = "plugins.refactoring" },
 	-- AI
 	{ import = "plugins.ai.init" },
 }
